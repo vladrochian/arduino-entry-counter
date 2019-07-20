@@ -1,4 +1,4 @@
-#define ENV_DETECTION_DIST_CM 100;
+#define ENV_DETECTION_DIST_CM 120;
 #define ENV_MIN_LENGTH 10;
 #define ENV_MAX_CONSECUTIVE_NEGATIVES 35;
 #define ENV_DETECTION_DELAY_MS 6
@@ -164,6 +164,7 @@ void loop() {
   proc.nextLoop();
   for (auto& sensor : sensors) {
     sensor.pulse();
+    delayMicroseconds(2000);
   }
   delayMicroseconds(ENV_DETECTION_DELAY_MS * 1000);
   proc.endLoop();
